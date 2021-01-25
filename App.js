@@ -4,57 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Category from './screen/Category'
 import Categories from './screen/Categories'
-function HomeScreen({navigation}) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title = "Go to details"
-        onPress = {()=>{
-          navigation.navigate('Detail')
-        }}
-      />
-      <Button
-        title = "Go back!"
-        onPress = {()=>{
-          try {
-            navigation.goBack();
-          } catch (error) {
-            console.log(123);
-          }
-        }}
-      />
-    </View>
-  );
-}
-function DetailsScreen({route,navigation}) {
-
-  return (
-
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title = "Go to details"
-        onPress = {()=>{
-          navigation.push('Detail')
-        }}
-      />
-        <Button
-        title = "Go back!"
-        onPress = {()=>{
-          try {
-            navigation.goBack();
-          } catch (error) {
-            
-          }
-
-        }}
-      />
-    </View>
-  );
-}
-
-
 
 export default function App() {
   const Stack = createStackNavigator();
