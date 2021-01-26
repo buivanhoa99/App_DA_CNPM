@@ -1,32 +1,8 @@
 import React from 'react';
-import { Button,ScrollView, StyleSheet, Text, View,TouchableOpacity,Alert, FlatList} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Category from './screen/Category'
-import Categories from './screen/Categories'
-
+import AppNavigator from './AppNavigator'
 export default function App() {
-  const Stack = createStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Categories} 
-      options ={{title :"Trang chủ", headerLeft: null}} />
-      <Stack.Screen name="Detail" component={Category} />
-      </Stack.Navigator>
-     </NavigationContainer>
-
+    <AppNavigator></AppNavigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    paddingHorizontal : 16,
-    justifyContent : 'center',
-    flex : 1,
-  },
-});
