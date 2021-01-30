@@ -12,7 +12,8 @@ export default function AppNavigator() {
       <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Categories} 
       options ={{title :"Trang chủ", headerLeft: null}} />
-      <Stack.Screen name="Detail" component={Category} />
+      <Stack.Screen name="Detail" component={Category} options={({ route }) => ({ title: route.params.category.name })}
+ />
       </Stack.Navigator>
      </NavigationContainer>
 

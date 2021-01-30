@@ -1,22 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View,TouchableOpacity,Alert, FlatList} from 'react-native';
 import CategoryListItem from '../components/CategoryListItem'
 import ski from '../assets/skii.png'
 import person from '../assets/person.jpg'
 import { NavigationContainer } from '@react-navigation/native';
-
-export default function Categories({navigation}) {
-  var datas = [
-    {id:1,name:"Áo"},
-    {id:2,name:"Quần"},
-    {id:3,name:"Mũ"},
-    {id:4,name:"Giày1"},
-    {id:5,name:"Giày2"},
-    {id:6,name:"Giày3"},
-    {id:7,name:"Giày4"},
-    {id:8,name:"Giày5"},
-  ]
+import axios from 'axios'
+import { render } from 'react-dom';
+export default class Categories extends Component {
+   constructor(navigation){
+      super(navigation);
+      this.navigation = navigation;
+      this.state = {
+        datas :  [
+ 
+          ]
+      }
+   }
+   componentDidMount(){
+     axios.get("http://192.168.1.51:3000/datas")
+     .then(res =>{
+       this.setState({datas : res.data});
+     })
+     .catch (err=>{
+       console.error(err);
+     })
+   }
+  render(){
+  const {datas} =  this.state;
+  const navigation = this.navigation;
   return (
     <View style={styles.container}>
       
@@ -39,6 +51,7 @@ export default function Categories({navigation}) {
       /> 
     </View> 
   );
+    }
 }
 
 const styles = StyleSheet.create({

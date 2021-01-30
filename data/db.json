@@ -1,0 +1,13 @@
+{
+    "datas" : [
+    {"id":1,"name":"Áo"},
+    {"id":2,"name":"Quần"},
+    {"id":3,"name":"Mũ"},
+    {"id":4,"name":"Giày1"},
+    {"id":5,"name":"Giày2"},
+    {"id":6,"name":"Giày3"},
+    {"id":7,"name":"Giày4"},
+    {"id":8,"name":"Giày5"},
+    {"id":9,"name":"Giày6"}
+    ]
+}
